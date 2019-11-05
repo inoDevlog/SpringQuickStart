@@ -20,5 +20,4 @@ public class LgTV implements TV{
 	public void volumeDown() {
 		System.out.println("LgTV -- DOWN");
 	}
-
 }
