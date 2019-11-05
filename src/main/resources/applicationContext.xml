@@ -7,7 +7,8 @@
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
 		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd">
 
-	<bean id="collectionBean"
+<context:component-scan base-package="polymorphism"></context:component-scan>
+	<!-- <bean id="collectionBean"
 		class="com.springbook.ioc.injection.CollectionBean">
 		<property name="addressList">
 			<list>
@@ -15,5 +16,5 @@
 				<value>서울시 성동구 행당동</value>
 			</list>
 		</property>
-	</bean>
+	</bean> -->
 </beans>
