@@ -5,8 +5,8 @@ CREATE TABLE USERS(
 	ROLE VARCHAR2(5)
 );
 
-INSERT INTO USERS VALUES('test', 'test123', '관리자', 'Admin');
-INSERT INTO USERS VALUES('user1', 'user1', '홍길동', 'User');
+INSERT INTO USERS VALUES('test', 'test123', 'Admin', 'Admin');
+INSERT INTO USERS VALUES('user1', 'user1', 'HongKilDong', 'User');
 
 CREATE TABLE BOARD(
 	SEQ NUMBER(5) PRIMARY KEY,
@@ -17,5 +17,5 @@ CREATE TABLE BOARD(
 	CNT NUMBER(5) DEFAULT 0
 );
 
-INSERT INTO BOARD(SEQ, TITLE, WRITER, CONTENT) VALUES (1, '가입인사', '관리자', '잘 부탁드립니다...');
+INSERT INTO BOARD(SEQ, TITLE, WRITER, CONTENT) VALUES (1, 'Hello', 'Admin', 'Nice to meet you'...');
 
