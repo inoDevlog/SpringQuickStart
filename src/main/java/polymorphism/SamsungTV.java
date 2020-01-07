@@ -6,21 +6,21 @@ public class SamsungTV implements TV {
 	private int price;
 
 	public SamsungTV() {
-		System.out.println("===> SamsungTV(1) 객체 생성");
+		System.out.println("===> SamsungTV(1) ");
 	}
 	
 	public void setSpeaker(Speaker speaker) {
-		System.out.println("===> setSpeaker() 호출");
+		System.out.println("===> setSpeaker()");
 		this.speaker = speaker;
 	}
 	
 	public void setPrice(int price) {
-		System.out.println("===> setPrice() 호출");
+		System.out.println("===> setPrice()");
 		this.price = price;
 	}
 
 	public void powerOn() {
-		System.out.println("SamsungTV -- ON (가격 : " + price + ")");
+		System.out.println("SamsungTV -- ON ( : " + price + ")");
 	}
 
 	public void powerOff() {
