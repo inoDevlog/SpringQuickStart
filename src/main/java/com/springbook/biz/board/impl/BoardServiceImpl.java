@@ -7,34 +7,45 @@ import org.springframework.stereotype.Service;
 
 import com.springbook.biz.board.BoardService;
 import com.springbook.biz.board.BoardVO;
+import com.springbook.biz.common.LogAdvice;
 
 @Service("boardService")
 public class BoardServiceImpl implements BoardService {
 
 	@Autowired
 	private BoardDAO boardDAO;
+	private LogAdvice log;
+	
+	public BoardServiceImpl() {
+		log = new LogAdvice();
+	}
 
 	public void insertBoard(BoardVO vo) {
+		log.printlog();
 		boardDAO.insertBoard(vo);
 	}
 
 	@Override
 	public void updateBoard(BoardVO vo) {
+		log.printlog();
 		boardDAO.updateBoard(vo);
 	}
 
 	@Override
 	public void deleteBoard(BoardVO vo) {
+		log.printlog();
 		boardDAO.deleteBoard(vo);
 	}
 
 	@Override
 	public BoardVO getBpard(BoardVO vo) {
+		log.printlog();
 		return boardDAO.getBoard(vo);
 	}
 
 	@Override
 	public List<BoardVO> getBoardList(BoardVO vo) {
+		log.printlog();
 		return boardDAO.getBoardList(vo);
 	}
 
