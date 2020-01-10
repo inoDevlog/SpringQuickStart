@@ -3,7 +3,7 @@ package polymorphism;
 public class AppleSpeaker implements Speaker {
 
 	public AppleSpeaker() {
-		System.out.println("===> AppleSpeaker °´Ã¼ »ı¼º");
+		System.out.println("===> AppleSpeaker ê°ì²´ ìƒì„±ë¨");
 	}
 
 	public void volumeUp() {

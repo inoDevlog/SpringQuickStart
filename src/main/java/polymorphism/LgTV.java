@@ -10,7 +10,7 @@ public class LgTV implements TV {
 	private Speaker speaker;
 
 	public LgTV() {
-		System.out.println("===> LgTV °´Ã¼ »ı¼º");
+		System.out.println("===> LgTV ê°ì²´ ìƒì„±ë¨");
 	}
 
 	public void powerOn() {
