@@ -15,10 +15,10 @@
 	
 	<aop:config>
 		<aop:pointcut id="allPointcut" expression="execution(* com.springbook.biz..*Impl.*(..))"/>
-		<aop:pointcut id="getPointcut" expression="execution(* com.springbook.biz..*Impl.get*(..))"/>
+		<!-- <aop:pointcut id="getPointcut" expression="execution(* com.springbook.biz..*Impl.get*(..))"/> -->
 		
 		<aop:aspect ref="log">
-			<aop:before pointcut-ref="getPointcut" method="printLog"/>
+			<aop:before pointcut-ref="allPointcut" method="log"/>
 		</aop:aspect>
 	</aop:config>
 	<!-- <bean id="userService" class="com.springbook.biz.user.impl.UserServiceImpl">
