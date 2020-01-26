@@ -13,10 +13,10 @@
 	
 	<bean id="afterThrowing" class="com.springbook.biz.common.AfterThrowingAdvice"/>
 	<bean id="after" class="com.springbook.biz.common.AfterAdvice"/>
+	<bean id="around" class="com.springbook.biz.common.AroundAdvice"/>
 	
 	<aop:config>
-		<aop:pointcut id="allPointcut" expression="execution(* com.springbook.biz..*Impl.g*(..))"/>
-		<!-- <aop:pointcut id="getPointcut" expression="execution(* com.springbook.biz..*Impl.get*(..))"/> -->
+		<aop:pointcut id="allPointcut" expression="execution(* com.springbook.biz..*Impl.*(..))"/>
 		
 		<aop:aspect ref="afterThrowing">
 			<aop:after-throwing pointcut-ref="allPointcut" method="exceptionLog"/>
@@ -24,6 +24,10 @@
 		
 		<aop:aspect ref="after">
 			<aop:after pointcut-ref="allPointcut" method="finallyLog"/>
+		</aop:aspect>
+		
+		<aop:aspect ref="around">
+			<aop:around pointcut-ref="allPointcut" method="aroundLog"/>
 		</aop:aspect>
 	</aop:config>
 	<!-- <bean id="userService" class="com.springbook.biz.user.impl.UserServiceImpl">
