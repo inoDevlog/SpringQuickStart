@@ -15,14 +15,22 @@
 	<bean id="afterThrowing" class="com.springbook.biz.common.AfterThrowingAdvice" />
 	<bean id="after" class="com.springbook.biz.common.AfterAdvice" />
 	<bean id="around" class="com.springbook.biz.common.AroundAdvice" />
+	<bean id="afterReturning" class="com.springbook.biz.common.AfterReturningAdvice" />
 
 	<aop:config>
-		<aop:pointcut id="allPointcut"
-			expression="execution(* com.springbook.biz..*Impl.*(..))" />
+	
+		<aop:pointcut id="getPointcut"
+			expression="execution(* com.springbook.biz..*Impl.get*(..))" />
+			
+		<aop:aspect ref="afterReturning">
+			<aop:after-returning pointcut-ref="getPointcut" method="afterLog" returning="returnObj" />
+		</aop:aspect>
+	
 
-		<aop:aspect ref="afterThrowing">
+		<!-- <aop:aspect ref="afterThrowing">
 			<aop:after-throwing pointcut-ref="allPointcut" method="exceptionLog" />
 		</aop:aspect>
+		
 
 		<aop:aspect ref="after">
 			<aop:after pointcut-ref="allPointcut" method="finallyLog" />
@@ -30,6 +38,6 @@
 
 		<aop:aspect ref="around">
 			<aop:around pointcut-ref="allPointcut" method="aroundLog" />
-		</aop:aspect>
+		</aop:aspect> -->
 	</aop:config>
 </beans>
