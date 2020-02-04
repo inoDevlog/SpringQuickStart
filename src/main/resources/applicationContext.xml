@@ -30,7 +30,6 @@
 			<aop:after-throwing pointcut-ref="allPointcut" method="exceptionLog" throwing="exceptObj" />
 		</aop:aspect>
 		
-
 		<!-- <aop:aspect ref="after">
 			<aop:after pointcut-ref="allPointcut" method="finallyLog" />
 		</aop:aspect>
