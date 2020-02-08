@@ -16,8 +16,6 @@ public class AfterReturningAdvice {
 				System.out.println(user.getName() + " 로그인(Admin)");
 			}
 		}
-		
 		System.out.println("[사후 처리] " + method + "() 메소드 리턴값 : " + returnObj.toString());
-
 	}
 }
