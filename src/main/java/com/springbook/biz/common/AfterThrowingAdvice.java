@@ -11,7 +11,7 @@ public class AfterThrowingAdvice {
 		System.out.println(method + "()메소드 수행 중 발생된 예외 발생!");
 
 		if (exceptObj instanceof IllegalArgumentException) {
-			System.out.println("부적하한 값이 입력되었습니다.");
+			System.out.println("부적합한 값이 입력되었습니다.");
 		} else if (exceptObj instanceof NumberFormatException) {
 			System.out.println("숫자 형식의 값이 아닙니다.");
 		} else if (exceptObj instanceof Exception) {
