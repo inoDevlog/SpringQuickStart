@@ -19,9 +19,9 @@ public class UserServiceClient {
 
 		UserVO user = userService.getUser(vo);
 		if (user != null) {
-			System.out.println(user.getName() + "님 환영합니.");
+			System.out.println(user.getName() + "님 환영합니다.");
 		} else {
-			System.out.println("로그인 실");
+			System.out.println("로그인 실패");
 		}
 
 		// 4. Spring 컨테이너를 종료한다.
