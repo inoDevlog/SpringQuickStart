@@ -13,6 +13,7 @@ public class LogAdvice {
 
 	@Pointcut("execution(* com.springbook.biz..*Impl.get*(..))")
 	public void getPointcut() {
+		
 	}
 
 }
