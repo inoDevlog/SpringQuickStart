@@ -11,6 +11,7 @@ import com.springbook.biz.user.UserVO;
 @Service
 @Aspect
 public class AfterReturningAdvice {
+	
 	@Pointcut("execution( * com.springbook.biz..*Impl.get*(..))")
 	public void getPointcut() {
 
@@ -18,6 +19,7 @@ public class AfterReturningAdvice {
 
 	@AfterReturning(pointcut="getPointcut()", returning = "returnObj")
 	public void afterLog(JoinPoint jp, Object returnObj) {
+	
 		String method = jp.getSignature().getName();
 
 		if (returnObj instanceof UserVO) {
@@ -26,6 +28,7 @@ public class AfterReturningAdvice {
 				System.out.println(user.getName() + " 로그인(Admin)");
 			}
 		}
+		
 		System.out.println("[사후 처리] " + method + "() 메소드 리턴값 : " + returnObj.toString());
 	}
 }
