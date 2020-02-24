@@ -11,7 +11,7 @@ public class BoardServiceClient {
 		// 1. Spring 컨테이너를 구동한다.
 		AbstractApplicationContext container = new GenericXmlApplicationContext("applicationContext.xml");
 		
-		// 2. Spring 컨테이너로부터  BoardServiceImpl 객체를  Lookup 한다.
+		// 2. Spring 컨테이너로부터  BoardServiceImpl 객체를 Lookup 한다.
 		BoardService boardService = (BoardService) container.getBean("boardService");
 		
 		// 3. 글 등록 기능 테스트
@@ -22,8 +22,8 @@ public class BoardServiceClient {
 		boardService.insertBoard(vo);
 		
 		// 4. 글 목록 검색 기능 테스트 
-		List<BoardVO> boarList = boardService.getBoardList(vo);
-		for(BoardVO board : boarList) {
+		List<BoardVO> boardList = boardService.getBoardList(vo);
+		for(BoardVO board : boardList) {
 			System.out.println("---> " + board.toString());
 		}
 		// 5. Spring 컨테이너 종료.
