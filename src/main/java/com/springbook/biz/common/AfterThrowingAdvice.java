@@ -10,12 +10,7 @@ import org.springframework.stereotype.Service;
 @Aspect
 public class AfterThrowingAdvice {
 
-	@Pointcut("execution(* com.springbook.biz..*Impl.*(..))")
-	public void allPointcut() {
-
-	}
-
-	@AfterThrowing(pointcut = "allPointcut()", throwing = "expextObj")
+	@AfterThrowing(pointcut = "PointcutCommon.allPointcut()", throwing = "expextObj")
 	public void exceptionLog(JoinPoint jp, Exception exceptObj) {
 
 		String method = jp.getSignature().getName();
