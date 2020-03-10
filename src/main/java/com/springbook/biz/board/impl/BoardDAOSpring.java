@@ -5,6 +5,8 @@ import javax.sql.DataSource;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import com.springbook.biz.board.BoardVO;
+
 // DAO
 @Repository
 public class BoardDAOSpring extends JdbcDaoSupport {
@@ -18,6 +20,27 @@ public class BoardDAOSpring extends JdbcDaoSupport {
     @Autowired
     public void setCuperDataSource(DataSource dataSource) {
     	super.setDataSource(dataSource);
+    }
+    
+    public void insertBoard(BoardVO vo) {
+    	System.out.println("insertBoard()");
+    	getJdbcTemplate().update(BOARD_INSERT, vo.getTitle(), vo.getWriter(), vo.getContent());
+    }
+    
+    public void updateBoard(BoardVO vo) {
+    	System.out.println("updateBoard()");
+    	getJdbcTemplate().update(BOARD_UPDATE, vo.getTitle(), vo.getContent(), vo.getSeq());
+    }
+    
+    public void deleteBoard(BoardVO vo) {
+    	System.out.println("deleteBoard()");
+    	getJdbcTemplate().update(BOARD_DELETE, vo.getSeq());
+    }
+    
+    public BoardVO getBoard(BoardVO vo) {
+    	System.out.println("getBoard()");
+    	Object[] args = {vo.getSeq()};
+    	return getJdbcTemplate().queryForObject(BOARD_GET, args, new BoardRowMapper());
     }
 
 }
