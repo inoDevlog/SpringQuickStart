@@ -3,6 +3,7 @@ package com.springbook.biz.board;
 import java.sql.Date;
 
 public class BoardVO {
+	
 	private int seq;
 	private String title;
 	private String writer;
