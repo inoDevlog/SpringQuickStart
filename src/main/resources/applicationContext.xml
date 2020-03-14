@@ -9,22 +9,11 @@
 		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd
 		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.3.xsd">
 
-	<context:component-scan base-package="com.springbook.biz">
-	</context:component-scan>
+	<context:component-scan base-package="com.springbook.biz" />
 
 	<aop:aspectj-autoproxy></aop:aspectj-autoproxy>
 
-	<aop:config>
-<!-- 
-		<aop:aspect ref="afterReturning">
-			<aop:after-returning pointcut-ref="getPointcut" method="afterLog" returning="returnObj" />
-		</aop:aspect>
-
-		<aop:aspect ref="afterThrowing">
-			<aop:after-throwing pointcut-ref="allPointcut" method="exceptLog" throwing="exceptObj" />
-		</aop:aspect>
- -->
-	</aop:config>
+	<aop:config></aop:config>
 	
 	<!-- DataSource 설정 -->
 	<context:property-placeholder location="classpath:config/database.properties"/>
@@ -36,7 +25,7 @@
 		<property name="password" value="${jdbc.password}" />
 	</bean>
 	
-	<!-- Spring JDBC 설 -->
+	<!-- Spring JDBC 설정 -->
 	<bean id="jdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate">
 		<property name="dataSource" ref="dataSource" />
 	</bean>
