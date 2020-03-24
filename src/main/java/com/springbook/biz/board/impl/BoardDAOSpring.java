@@ -26,7 +26,7 @@ public class BoardDAOSpring {
 
 	public void insertBoard(BoardVO vo) {
 		System.out.println("insertBoard()");
-		jdbcTemplate.update(BOARD_INSERT, vo.getTitle(), vo.getWriter(), vo.getContent());
+		jdbcTemplate.update(BOARD_INSERT,vo.getSeq(), vo.getTitle(), vo.getWriter(), vo.getContent());
 	}
 
 	public void updateBoard(BoardVO vo) {
