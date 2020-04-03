@@ -9,6 +9,7 @@ session.invalidate();
 
 // 2. 세션 종료 후, 메인 화면으로 이동한다.
 response.sendRedirect("login.jsp");
+
 %>
 <html>
 <head>
