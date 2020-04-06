@@ -5,13 +5,8 @@
 <%@ page import="com.springbook.biz.board.BoardVO"%>
 
 <%
-	// 1. 사용자 입력 정보 추출(검색 기능은 나중에 구현)
-	// 2. DB 연동 처리
-	BoardVO vo = new BoardVO();
-	BoardDAO boardDAO = new BoardDAO();
-	List<BoardVO> boardList = boardDAO.getBoardList(vo);
-
-	// 3. 응답 화면 구성
+	// 세션에 저장된 글 목록을 꺼낸다.
+	List<BoardVO> boardList = (List) session.getAttribute("boardList");
 %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
  "http://www.w3.org/TR/html4/strict.dtd">
@@ -34,10 +29,8 @@
 					<td align="right"><select name="searchCondition">
 							<option value="TITLE">제목
 							<option value="CONTENT">내용
-					</select>
-					<input name="searchKeyword" type="text" />
-					<input type="submit" value="검색" />
-					</td>
+					</select> <input name="searchKeyword" type="text" />
+					<input type="submit" value="검색" /></td>
 				</tr>
 			</table>
 		</form>
@@ -55,7 +48,8 @@
 			<% for (BoardVO board : boardList) { %>
 			<tr>
 				<td><%=board.getSeq() %></td>
-				<td align="left"><a	href="getBoard.jsp?seq=<%= board.getSeq() %>"> <%= board.getTitle() %></a></td>
+				<td align="left"><a	href="getBoard.do?seq=<%= board.getSeq() %>">
+								 <%= board.getTitle() %></a></td>
 				<td><%=board.getWriter() %></td>
 				<td><%=board.getRegDate() %></td>
 				<td><%=board.getCnt() %></td>
