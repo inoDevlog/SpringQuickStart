@@ -42,7 +42,6 @@ public class DispatcherServlet extends HttpServlet {
 		// 1. 클이언트의 요청 path 정보를 추출한다.
 		String uri = request.getRequestURI();
 		String path = uri.substring(uri.lastIndexOf("/"));
-		System.out.println(path);
 		
 		// 2. HandlerMapping을 통해 path에 해당하는 Controller를 검색한다.
 		Controller ctrl = handlerMapping.getController(path);
@@ -52,7 +51,7 @@ public class DispatcherServlet extends HttpServlet {
 		
 		// 4. ViewResolver를 통해 viewName에 해당하는 화면을 검색한다.
 		String view = null;
-		if(!viewName.contains(",do")) {
+		if(!viewName.contains(".do")) {
 			view = viewResolver.getView(viewName);
 		}else {
 			view = viewName;
