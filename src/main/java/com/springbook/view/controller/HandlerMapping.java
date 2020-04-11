@@ -10,6 +10,7 @@ import com.springbook.view.board.UpdateBoardController;
 import com.springbook.view.user.LoginController;
 
 public class HandlerMapping {
+	
 	private Map<String, Controller> mappings;
 
 	public HandlerMapping() {
