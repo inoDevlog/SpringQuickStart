@@ -38,9 +38,9 @@
 				<th bgcolor="orange" width="100">조회수</th>
 			</tr>
 
-			<c:forEach items="${boardList }" car="board">
+			<c:forEach items="${boardList }" var="board">
 			<tr>
-				<td>"${board.seq }"</td>
+				<td>${board.seq }</td>
 				<td align="left"><a	href="getBoard.do?seq=${board.seq }">
 								 ${board.title }</a></td>
 				<td>${board.writer }</td>
