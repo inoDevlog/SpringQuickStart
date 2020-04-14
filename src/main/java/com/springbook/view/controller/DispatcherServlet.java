@@ -21,6 +21,7 @@ public class DispatcherServlet extends HttpServlet {
 	private ViewResolver viewResolver;
 
 	public void init() throws ServletException {
+		
 		handlerMapping = new HandlerMapping();
 		viewResolver = new ViewResolver();
 		viewResolver.setPrefix("./");
@@ -29,11 +30,13 @@ public class DispatcherServlet extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
+		
 		process(request, response);
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
+		
 		request.setCharacterEncoding("UTF-8");
 		process(request, response);
 	}
