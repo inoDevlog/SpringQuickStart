@@ -12,7 +12,7 @@ public class UserServiceClient {
 		// 2. Spring 컨테이너로부터  UserServiceImpl 객체를 Lookup 한다.
 		UserService userService = (UserService) container.getBean("userService");
 
-		// 3. 로그인 기능 테스
+		// 3. 로그인 기능 테스트
 		UserVO vo = new UserVO();
 		vo.setId("test");
 		vo.setPassword("test123");

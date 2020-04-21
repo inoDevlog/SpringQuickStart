@@ -23,7 +23,7 @@
 					<td align="left"><input type="text" name="title" size="10" /></td>
 				</tr>
 				<tr>
-					<td color="orange">내용</td>
+					<td bgcolor="orange">내용</td>
 					<td align="left"><textarea name="content" rows="10" cols="40"></textarea></td>
 				</tr>
 				<tr>

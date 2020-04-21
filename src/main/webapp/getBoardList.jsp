@@ -15,8 +15,8 @@
 			테스트님 환영합니다...<a href="logout.do">Log-out</a>
 		</h3>
 
-		<!-- 감섹 시작 -->
-		<form action="getBoardList.jsp" method="post">
+		<!-- 검색 시작 -->
+		<form action="getBoardList.do" method="post">
 			<table border="1" cellpadding="0" cellspacing="0" width="700">
 				<tr>
 					<td align="right"><select name="searchCondition">
