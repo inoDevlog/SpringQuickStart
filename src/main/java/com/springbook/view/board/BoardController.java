@@ -10,7 +10,6 @@ import com.springbook.biz.board.impl.BoardDAO;
 @Controller
 public class BoardController {
 
-	// 글 등록
 	@RequestMapping(value = "/insertBoard.do")
 	public String insertBoard(BoardVO vo, BoardDAO boardDAO) {
 
@@ -38,14 +37,13 @@ public class BoardController {
 		mav.addObject("board", boardDAO.getBoard(vo)); // Model 정보 저장
 		mav.setViewName("getBoard.jsp"); // View 정보 저장
 		return mav;
-
 	}
 
 	@RequestMapping("/getBoardList.do")
 	public ModelAndView getBoardList(BoardVO vo, BoardDAO boardDAO, ModelAndView mav) {
 
 		mav.addObject("boardList", boardDAO.getBoardList(vo)); // Model 정보 저장
-		mav.setViewName("getBoardList"); // View 정보 저장
+		mav.setViewName("getBoardList.jsp"); // View 정보 저장
 		return mav;
 	}
 
