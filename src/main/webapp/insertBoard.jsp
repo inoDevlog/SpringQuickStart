@@ -4,7 +4,7 @@
  "http://www.w3.org/TR/html4/strict.dtd">
 <html>
 <head>
-<meta charset="UTF-8">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>새 글 등록</title>
 </head>
 <body>

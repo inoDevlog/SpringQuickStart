@@ -23,7 +23,7 @@ public class BoardController {
 		return conditionMap;
 	}
 	
-	@RequestMapping(value = "/insertBoard.do")
+	@RequestMapping("/insertBoard.do")
 	public String insertBoard(BoardVO vo, BoardDAO boardDAO) {
 
 		boardDAO.insertBoard(vo);
@@ -32,7 +32,7 @@ public class BoardController {
 
 	@RequestMapping("/updateBoard.do")
 	public String updateBoard(BoardVO vo, BoardDAO boardDAO) {
-
+		System.out.println("작성자 이름 : " + vo.getWriter());
 		boardDAO.updateBoard(vo);
 		return "getBoardList.do";
 	}
