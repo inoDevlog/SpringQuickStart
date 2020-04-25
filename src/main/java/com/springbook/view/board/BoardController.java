@@ -3,6 +3,7 @@ package com.springbook.view.board;
 import java.util.HashMap;
 import java.util.Map;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -25,6 +26,7 @@ public class BoardController {
 	
 	@RequestMapping("/insertBoard.do")
 	public String insertBoard(BoardVO vo, BoardDAO boardDAO) {
+		System.out.println("==================>insertBoard()");
 
 		boardDAO.insertBoard(vo);
 		return "redirect:getBoardList.do";
