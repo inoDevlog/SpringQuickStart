@@ -16,5 +16,4 @@ public class LogoutController {
 		session.invalidate();
 		return "login.jsp";
 	}
-
 }
