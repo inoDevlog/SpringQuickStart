@@ -32,8 +32,13 @@ public class BoardController {
 	}
 
 	@RequestMapping("/updateBoard.do")
-	public String updateBoard(BoardVO vo, BoardDAO boardDAO) {
-		System.out.println("작성자 이름 : " + vo.getWriter());
+	public String updateBoard(@ModelAttribute("board") BoardVO vo, BoardDAO boardDAO) {
+		System.out.println("번호 : " + vo.getSeq());
+		System.out.println("제목 : " + vo.getTitle());
+		System.out.println("작성자 : " + vo.getWriter());
+		System.out.println("내용 : " + vo.getContent());
+		System.out.println("등록일 : " + vo.getRegDate());
+		System.out.println("조회수 : " + vo.getCnt());
 		boardDAO.updateBoard(vo);
 		return "getBoardList.do";
 	}
