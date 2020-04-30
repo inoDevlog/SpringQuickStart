@@ -13,7 +13,7 @@ import com.springbook.biz.board.BoardVO;
 import com.springbook.biz.board.impl.BoardDAO;
 
 @Controller
-@SessionAttributes("board")
+@SessionAttributes("board") // Model에 "board"라는 이름으로 저장되는 데이터가 있다면 그 데이터를 HttpSession에 자동으로 저장
 public class BoardController {
 	
 	// 검색 조건 목록 설정
@@ -33,6 +33,7 @@ public class BoardController {
 		return "redirect:getBoardList.do";
 	}
 
+	// 글 수정
 	@RequestMapping("/updateBoard.do")
 	public String updateBoard(@ModelAttribute("board") BoardVO vo, BoardDAO boardDAO) {
 		System.out.println("번호 : " + vo.getSeq());
