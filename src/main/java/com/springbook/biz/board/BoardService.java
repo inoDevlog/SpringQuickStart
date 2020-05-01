@@ -14,4 +14,6 @@ public interface BoardService {
 
 	List<BoardVO> getBoardList(BoardVO vo);
 
+	Object getBoard(BoardVO vo);
+
 }
