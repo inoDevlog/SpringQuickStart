@@ -10,10 +10,8 @@ public interface BoardService {
 
 	void deleteBoard(BoardVO vo);
 
-	BoardVO getBpard(BoardVO vo);
+	BoardVO getBoard(BoardVO vo);
 
 	List<BoardVO> getBoardList(BoardVO vo);
-
-	Object getBoard(BoardVO vo);
 
 }
