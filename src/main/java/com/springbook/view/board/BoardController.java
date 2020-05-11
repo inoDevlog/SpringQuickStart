@@ -66,5 +66,4 @@ public class BoardController {
 		model.addAttribute("boardList", boardService.getBoardList(vo)); // Model 정보 저장
 		return "getBoardList.jsp"; // View 이름 리턴
 	}
-
 }
