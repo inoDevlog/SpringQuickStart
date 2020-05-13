@@ -126,7 +126,7 @@ public class BoardDAO {
 			} else if (vo.getSearchCondition().equals("CONTENT")) {
 				stmt = conn.prepareStatement(BOARD_LIST_C);
 			}
-			stmt = conn.prepareStatement(BOARD_LIST);
+			stmt.setString(1, vo.getSearchKeyword());
 			rs = stmt.executeQuery();
 			while (rs.next()) {
 				BoardVO board = new BoardVO();
