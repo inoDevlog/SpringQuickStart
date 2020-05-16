@@ -19,4 +19,3 @@ CREATE TABLE BOARD(
 
 INSERT INTO BOARD(SEQ, TITLE, WRITER, CONTENT) VALUES (1, 'Hello', 'Admin', 'Nice to meet you...');
 INSERT INTO BOARD(SEQ, TITLE, WRITER, CONTENT) VALUES (2, 'Hello', 'Admin', 'Nice to meet you...');
-

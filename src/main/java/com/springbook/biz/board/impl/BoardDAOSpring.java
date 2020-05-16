@@ -19,7 +19,6 @@ public class BoardDAOSpring {
 	private final String BOARD_UPDATE = "UPDATE BOARD SET TITLE=?, CONTENT=? WHERE SEQ=?";
 	private final String BOARD_DELETE = "DELETE BOARD WHERE SEQ=?";
 	private final String BOARD_GET = "SELECT * FROM BOARD WHERE SEQ=?";
-	private final String BOARD_LIST = "SELECT * FROM BOARD ORDER BY SEQ DESC";
 	private final String BOARD_LIST_T = "select * from where title like '%'||?||'%' order by seq desc";
 	private final String BOARD_LIST_C = "select * from where content like '%'||?||'%' order by seq desc";
 
