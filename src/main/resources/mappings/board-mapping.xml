@@ -48,5 +48,23 @@
 		ORDER BY SEQ DESC
 		]]>
 	</select>
+	
+	<select id="getBoardList_T" resultMap="boardResult">
+		<![CDATA[
+			SELECT *
+			FROM BOARD
+			WHERE TITLE LIKE '%'||#{searchKeyword}||'%'
+			ORDER BY SEQ DESC
+		]]>
+	</select>
+	
+		<select id="getBoardList_C" resultMap="boardResult">
+		<![CDATA[
+			SELECT *
+			FROM BOARD
+			WHERE CONTENT LIKE '%'||#{searchKeyword}||'%'
+			ORDER BY SEQ DESC
+		]]>
+	</select>
 
 </mapper>
