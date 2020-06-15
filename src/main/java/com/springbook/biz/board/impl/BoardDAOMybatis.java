@@ -34,19 +34,19 @@ public class BoardDAOMybatis {
 		return (BoardVO) mybatis.selectOne("BoardDAO.getBoard", vo);
 	}
 
-//	public List<BoardVO> getBoardList(BoardVO vo) {
-//		System.out.println("===> MyBatis로 getBoardList() 기능 처리");
-//		return mybatis.selectList("BoardDAO.getBoardList", vo);
-//	}
-
 	public List<BoardVO> getBoardList(BoardVO vo) {
 		System.out.println("===> MyBatis로 getBoardList() 기능 처리");
-		if (vo.getSearchCondition().equals("TITLE")) {
-			return mybatis.selectList("BoardDAO.getBoardList_T", vo);
-		} else if (vo.getSearchCondition().equals("CONTENT")) {
-			return mybatis.selectList("BoardDAO.getBoardList_C", vo);
-		}
-		return null;
+		return mybatis.selectList("BoardDAO.getBoardList", vo);
 	}
+
+//	public List<BoardVO> getBoardList(BoardVO vo) {
+//		System.out.println("===> MyBatis로 getBoardList() 기능 처리");
+//		if (vo.getSearchCondition().equals("TITLE")) {
+//			return mybatis.selectList("BoardDAO.getBoardList_T", vo);
+//		} else if (vo.getSearchCondition().equals("CONTENT")) {
+//			return mybatis.selectList("BoardDAO.getBoardList_C", vo);
+//		}
+//		return null;
+//	}
 
 }
