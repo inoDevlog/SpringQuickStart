@@ -12,10 +12,10 @@ import javax.persistence.Transient;
 
 import org.springframework.web.multipart.MultipartFile;
 
+//VO(Value Object)
 @Entity
 @Table(name = "BOARD")
 public class BoardVO {
-
 	@Id
 	@GeneratedValue
 	private int seq;
@@ -80,6 +80,7 @@ public class BoardVO {
 		this.cnt = cnt;
 	}
 
+	// @JsonIgnore
 	public String getSearchCondition() {
 		return searchCondition;
 	}
@@ -107,8 +108,6 @@ public class BoardVO {
 	@Override
 	public String toString() {
 		return "BoardVO [seq=" + seq + ", title=" + title + ", writer=" + writer + ", content=" + content + ", regDate="
-				+ regDate + ", cnt=" + cnt + ", searchCondition=" + searchCondition + ", searchKeyword=" + searchKeyword
-				+ ", uploadFile=" + uploadFile + "]";
+				+ regDate + ", cnt=" + cnt + "]";
 	}
-
 }

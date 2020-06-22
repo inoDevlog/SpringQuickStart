@@ -4,15 +4,6 @@
 
 <mapper namespace="BoardDAO">
 
-	<resultMap type="board" id="boardResult">
-		<id property="seq" column="SEQ" />
-		<result property="title" column="TITLE" />
-		<result property="writer" column="WRITER" />
-		<result property="content" column="CONTENT" />
-		<result property="regDate" column="REGDATE" />
-		<result property="cnt" column="CNT" />
-	</resultMap>
-
 	<insert id="insertBoard" parameterType="board">
 		<![CDATA[
 		INSERT INTO BOARD(SEQ, TITLE, WRITER, CONTENT)
@@ -53,5 +44,14 @@
 		</if>
 		ORDER BY SEQ DESC
 	</select>
+	
+	<resultMap type="board" id="boardResult">
+		<id property="seq" column="SEQ" />
+		<result property="title" column="TITLE" />
+		<result property="writer" column="WRITER" />
+		<result property="content" column="CONTENT" />
+		<result property="regDate" column="REGDATE" />
+		<result property="cnt" column="CNT" />
+	</resultMap>
 	
 </mapper>
