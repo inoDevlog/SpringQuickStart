@@ -16,7 +16,7 @@ import org.springframework.web.multipart.MultipartFile;
 @Entity
 @Table(name = "BOARD")
 public class BoardVO {
-	
+
 	@Id
 	@GeneratedValue
 	private int seq;
