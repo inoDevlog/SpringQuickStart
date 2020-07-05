@@ -11,6 +11,7 @@ import com.springbook.biz.board.BoardVO;
 
 @Repository
 public class BoardDAOJPA {
+
 	@PersistenceContext
 	private EntityManager em;
 
