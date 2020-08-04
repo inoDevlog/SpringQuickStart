@@ -11,7 +11,7 @@ import com.springbook.biz.board.BoardVO;
 // DAO
 @Repository
 public class BoardDAOSpring {
-	
+
 	@Autowired
 	private JdbcTemplate jdbcTemplate;
 
@@ -20,7 +20,7 @@ public class BoardDAOSpring {
 	private final String BOARD_DELETE = "DELETE BOARD WHERE SEQ=?";
 	private final String BOARD_GET = "SELECT * FROM BOARD WHERE SEQ=?";
 	private final String BOARD_LIST_T = "SELECT * FROM BOARD WHERE TITLE LIKE '%'||?||'%' ORDER BY SEQ DESC";
-	private final String BOARD_LIST_C = "SELECT * FROM BOARD WHERE CONTENT LIKE '%'||?||'%' ORDER BY SEQ DESC";		
+	private final String BOARD_LIST_C = "SELECT * FROM BOARD WHERE CONTENT LIKE '%'||?||'%' ORDER BY SEQ DESC";
 
 	public void insertBoard(BoardVO vo) {
 		System.out.println("insertBoard()");
@@ -45,11 +45,11 @@ public class BoardDAOSpring {
 
 	public List<BoardVO> getBoardList(BoardVO vo) {
 		System.out.println("getBoardList()");
-		
-		Object[] args = {vo.getSearchKeyword()};
-		if(vo.getSearchCondition().contentEquals("TITLE")) {
+
+		Object[] args = { vo.getSearchKeyword() };
+		if (vo.getSearchCondition().contentEquals("TITLE")) {
 			return jdbcTemplate.query(BOARD_LIST_T, args, new BoardRowMapper());
-		} else if(vo.getSearchCondition().contentEquals("CONTENT")) {
+		} else if (vo.getSearchCondition().contentEquals("CONTENT")) {
 			return jdbcTemplate.query(BOARD_LIST_C, args, new BoardRowMapper());
 		}
 		return null;

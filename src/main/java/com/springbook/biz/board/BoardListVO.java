@@ -10,7 +10,7 @@ import javax.xml.bind.annotation.XmlRootElement;
 @XmlRootElement(name = "boardList")
 @XmlAccessorType(XmlAccessType.FIELD)
 public class BoardListVO {
-	
+
 	@XmlElement(name = "board")
 	private List<BoardVO> boardList;
 
