@@ -21,7 +21,6 @@ public class BoardServiceClient {
 		vo.setTitle("임시 제목");
 		vo.setWriter("홍길동");
 		vo.setContent("임시 내용.......");
-		// boardService.insertBoard(vo);
 
 		// 4. 글 목록 검색 기능 테스트
 		// vo.setSearchCondition("TITLE");
@@ -30,6 +29,7 @@ public class BoardServiceClient {
 		for (BoardVO board : boardList) {
 			System.out.println("---> " + board.toString());
 		}
+		
 		// 5. Spring 컨테이너 종료.
 		container.close();
 	}
